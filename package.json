@@ -14,6 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "element-ui": "^2.1.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
@@ -70,6 +71,7 @@
     "portfinder": "^1.0.13",
     "rimraf": "^2.6.0",
     "sass-loader": "^6.0.6",
+    "sass-resources-loader": "^1.3.2",
     "selenium-server": "^3.0.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
@@ -79,7 +81,8 @@
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
     "vue-loader": "^13.3.0",
-    "vue-style-loader": "^3.0.1",
+    "vue-style-loader": "^3.1.2",
+    "vue-svg-loader": "^0.5.0",
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
