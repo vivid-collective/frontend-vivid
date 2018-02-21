@@ -1,13 +1,15 @@
+
 <template>
-  <h1>Landing Page</h1>
+
+
 </template>
 
 <script>
-export default {
-  name: 'LandingPage'
-}
-</script>
+  export default {
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+  }
+
+</script>
 <style scoped style lang="scss">
+
 </style>
