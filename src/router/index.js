@@ -5,11 +5,9 @@ import LandingPage from '@/components/LandingPage'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: '',
-      component: LandingPage
-    }
-  ]
+  routes: [{
+    path: '/',
+    name: '',
+    component: LandingPage
+  }]
 })

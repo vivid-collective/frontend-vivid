@@ -1,44 +1,42 @@
 <template>
-  <v-app>
-    <v-layout justify-space-between>
-      <div id="main-logo"><Logo></Logo></div>
-      <nav id="top-right-nav-icons">
-        <div class="icon"><Person></Person></div>
-        <div class="icon"><Cart></Cart></div>
-        <div @click.stop="drawer = !drawer" class="icon">
-          <Hamburger></Hamburger>
-        </div>
-      </nav>
-      <v-navigation-drawer
-        temporary
-        v-model="drawer"
-        absolute
-        right
-      >
-      <v-list class="pa-1">
-        <v-list-tile avatar>
-          <v-list-tile-avatar>
-            <img src="https://randomuser.me/api/portraits/men/85.jpg" >
-          </v-list-tile-avatar>
-          <v-list-tile-content>
-            <v-list-tile-title>John Leider</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-      <v-list class="pt-0" dense>
-        <v-divider></v-divider>
-        <v-list-tile v-for="item in items" :key="item.title">
-          <v-list-tile-action>
-            <!-- <v-icon>{{ item.icon }}</v-icon> -->
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-      </v-navigation-drawer>
-    </v-layout>
-  </v-app>
+  <v-layout id="nav-bar-container">
+    <div id="main-logo"><Logo></Logo></div>
+    <nav id="top-right-nav-icons">
+      <div class="icon"><Person></Person></div>
+      <div class="icon"><Cart></Cart></div>
+      <div @click.stop="drawer = !drawer" class="icon">
+        <Hamburger></Hamburger>
+      </div>
+    </nav>
+    <v-navigation-drawer
+      temporary
+      fixed
+      v-model="drawer"
+      right
+    >
+    <v-list class="pa-1">
+      <v-list-tile avatar>
+        <v-list-tile-avatar>
+          <img src="https://randomuser.me/api/portraits/men/85.jpg" >
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>John Leider</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list>
+    <v-list class="pt-0" dense>
+      <v-divider></v-divider>
+      <v-list-tile v-for="item in items" :key="item.title">
+        <v-list-tile-action>
+          <!-- <v-icon>{{ item.icon }}</v-icon> -->
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list>
+    </v-navigation-drawer>
+  </v-layout>
 </template>
 
 <script>
@@ -69,13 +67,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped style lang="scss">
-#main-logo{
+#nav-bar-container{
+  position: absolute;
+  z-index: 99;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  #main-logo {
   padding: 2em 4em;
+  }
+  #top-right-nav-icons {
+    padding: 2em;
+    .icon {
+      margin: 1em
+    };
+  }
 }
-#top-right-nav-icons {
-  padding: 2em;
-  .icon {
-    margin: 1em
-  };
-}
+
 </style>
