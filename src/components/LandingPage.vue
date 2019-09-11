@@ -1,13 +1,67 @@
+
 <template>
-  <h1>Landing Page</h1>
+  <div id="testing">
+    <el-radio-group v-model="isCollapse">
+      <el-radio-button :label="false">expand</el-radio-button>
+      <el-radio-button :label="true">collapse</el-radio-button>
+    </el-radio-group>
+    <div class="nav-container">
+        <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+          <el-submenu index="1">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span slot="title">Navigator One</span>
+            </template>
+            <el-menu-item-group>
+              <span slot="title">Group One</span>
+              <el-menu-item index="1-1">item one</el-menu-item>
+              <el-menu-item index="1-2">item two</el-menu-item>
+            </el-menu-item-group>
+            <el-menu-item-group title="Group Two">
+              <el-menu-item index="1-3">item three</el-menu-item>
+            </el-menu-item-group>
+            <el-submenu index="1-4">
+              <span slot="title">item four</span>
+              <el-menu-item index="1-4-1">item one</el-menu-item>
+            </el-submenu>
+          </el-submenu>
+          <el-menu-item index="2">
+            <i class="el-icon-menu"></i>
+            <span slot="title">Navigator Two</span>
+          </el-menu-item>
+          <el-menu-item index="3">
+            <i class="el-icon-setting"></i>
+            <span slot="title">Navigator Three</span>
+          </el-menu-item>
+        </el-menu>
+     </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'LandingPage'
-}
+  data() {
+    return {
+      isCollapse: true
+    };
+  },
+  methods: {
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    }
+  }
+};
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped style lang="scss">
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
+}
+el-radio-group {
+  display: flex !important;
+  justify-content: flex-end !important;
+}
 </style>

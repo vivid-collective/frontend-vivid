@@ -3,7 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import ElementUI from 'element-ui'
+import '.././node_modules/element-ui/lib/theme-chalk/index.css'
+import locale from '.././node_modules/element-ui/lib/locale/lang/en'
 
+Vue.use(ElementUI)
+Vue.use(ElementUI, { locale })
+console.log(ElementUI);
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
